@@ -13,10 +13,7 @@ import javax.persistence.Table;
 
 @Entity
 @NamedQueries({
-    @NamedQuery(
-        name = "getAllMessages",
-        query = "SELECT m FROM Tasks AS m ORDER BY m.id DESC"
-    )
+        @NamedQuery(name = "getAllMessages", query = "SELECT m FROM Tasks AS m ORDER BY m.id DESC")
 })
 @Table(name = "tasks")
 public class Tasks {
@@ -31,14 +28,6 @@ public class Tasks {
 
     @Column(name = "updated_at", nullable = false)
     private Timestamp updated_at;
-
-    public Integer getid() {
-        return id;
-    }
-
-    public void setid(Integer id) {
-        this.id = id;
-    }
 
     public String getContent() {
         return content;
@@ -64,5 +53,12 @@ public class Tasks {
         this.updated_at = updated_at;
     }
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
 }
